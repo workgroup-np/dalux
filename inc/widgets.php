@@ -3,7 +3,7 @@
 class WP_Widget_Popular_Post_dalux extends WP_Widget {
     function __construct() {
          $widget_ops = array('classname' => 'Trending Posts', 'description' => __( "Gives list of trending posts.","dalux") );
-        parent::__construct('popular_post_widget', __('Robto:Trending Posts','dalux'), $widget_ops);
+        parent::__construct('popular_post_widget', __('Dalux:Trending Posts','dalux'), $widget_ops);
         $this->alt_option_name = 'popular_post';
     }
     public function widget( $args, $instance ) {
@@ -28,10 +28,10 @@ class WP_Widget_Popular_Post_dalux extends WP_Widget {
           $r = new WP_Query( $arg );
           if ($r->have_posts()) :
           ?>
-            <div class="dalux-sidebar-widget-details">
+            <div class="tbeer-sidebar-widget-details">
             <?php while ( $r->have_posts() ) : $r->the_post(); ?>
-                <div class="dalux-trending-news-post">
-                    <div class="dalux-trending-news-img">
+                <div class="tbeer-trending-news-post">
+                    <div class="tbeer-trending-news-img">
                         <?php
                         $thumbnail = get_post_thumbnail_id($post->ID);
                         $img_url = wp_get_attachment_image_src( $thumbnail,'full');
@@ -46,8 +46,8 @@ class WP_Widget_Popular_Post_dalux extends WP_Widget {
                         <img src="<?php echo esc_url($img_url);?>" alt="No image">
                         <?php endif;?>
                     </div>
-                    <div class="dalux-trending-news-details">
-                        <h3 class="dalux-news-post-heading"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                    <div class="tbeer-trending-news-details">
+                        <h3 class="tbeer-news-post-heading"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                     </div>
                </div>
               <?php endwhile; ?>

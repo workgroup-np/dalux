@@ -152,17 +152,17 @@ a img.aligncenter {
     width: auto;
     z-index: 100000; /* Above WP toolbar. */
 }
-.dalux-latest-article .dalux-latest-article-details a.dalux-category-meta, .dalux-category-meta a {
+.tbeer-latest-article .tbeer-latest-article-details a.tbeer-category-meta, .tbeer-category-meta a {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #fe6f19;
     line-height: 1;
 }
 /*new robto css*/
-.dalux-news-details span.dalux-category-meta a{
+.tbeer-news-details span.tbeer-category-meta a{
     color:#fff;
 }
-.dalux-news-details span.dalux-category-meta {
+.tbeer-news-details span.tbeer-category-meta {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   color: #fffefe;
@@ -175,21 +175,21 @@ a img.aligncenter {
   -o-border-radius: 15px;
   border-radius: 15px;
 }
-.dalux-numbered-news-post-wrapper{
+.tbeer-numbered-news-post-wrapper{
     float:right;
 }
-footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container {
+footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-main-menu-container {
   display: block;
   overflow: hidden;
 }
-footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li {
+footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-main-menu-container ul li {
   display: block;
   overflow: hidden;
   margin-bottom: 20px;
-}footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li ul {
+}footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-main-menu-container ul li ul {
   margin-left: 20px;
 }
-footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li a {
+footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-main-menu-container ul li a {
   font-family: 'Raleway', sans-serif;
   font-size: 13px;
   color: #939393;
@@ -200,48 +200,52 @@ footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-m
   -o-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li a:hover {
+footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-main-menu-container ul li a:hover {
   color: #fe6f19;
 }
-footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li:last-child {
+footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-main-menu-container ul li:last-child {
   margin-bottom: 0;
 }
-.dalux-post-title-metas span.dalux-category-meta {
+.tbeer-post-title-metas span.tbeer-category-meta {
     padding: 10px 15px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px;
 }
-span.dalux-category-meta {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  color: #fffefe;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 20px;
-  background-color: #fe6f19;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -o-border-radius: 15px;
-  border-radius: 15px;
+.tbeer-featured-news .tbeer-news-details .tbeer-category-meta,
+.tbeer-category-meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #fffefe;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    background-color: #0054a6;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    display:block;
 }
-span.dalux-category-meta a{
+.tbeer-category-meta {
+  display:inline-block;
+}
+.tbeer-category-meta a{
     color:#fff;
 }
-.dalux-post-title-metas div.dalux-news-post-excerpt p{
+.tbeer-post-title-metas div.tbeer-news-post-excerpt p{
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: #8e8e8e;
     font-weight: 400;
     margin-bottom: 35px;
 }
-span.dalux-category-meta .dalux-comments-counter a{
+span.tbeer-category-meta .tbeer-comments-counter a{
     color:#a8a8a8;
 }
-.dalux-next-prev-post-pagination .dalux-next-post .dalux-other-post-title-wrapper a h2,
-.dalux-next-prev-post-pagination .dalux-prev-post .dalux-other-post-title-wrapper a h2 {
+.tbeer-next-prev-post-pagination .tbeer-next-post .tbeer-other-post-title-wrapper a h2,
+.tbeer-next-prev-post-pagination .tbeer-prev-post .tbeer-other-post-title-wrapper a h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: #232323;
@@ -253,10 +257,10 @@ span.dalux-category-meta .dalux-comments-counter a{
     -o-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
-.dalux-next-prev-post-pagination .dalux-prev-post .dalux-other-post-title-wrapper a h2:hover,.dalux-next-prev-post-pagination .dalux-next-post .dalux-other-post-title-wrapper h2 a:hover {
+.tbeer-next-prev-post-pagination .tbeer-prev-post .tbeer-other-post-title-wrapper a h2:hover,.tbeer-next-prev-post-pagination .tbeer-next-post .tbeer-other-post-title-wrapper h2 a:hover {
     color: #fe6f19;
 }
-.dalux-comments .dalux-comment-details div.dalux-comment-reply {
+.tbeer-comments .tbeer-comment-details div.tbeer-comment-reply {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: #232323;
@@ -269,7 +273,7 @@ span.dalux-category-meta .dalux-comments-counter a{
     -o-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
-form .dalux-subscription-widget .dalux-subscription-form button {
+form .tbeer-subscription-widget .tbeer-subscription-form button {
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
     color: #ffffff;
@@ -285,7 +289,7 @@ form .dalux-subscription-widget .dalux-subscription-form button {
     -o-border-radius: 4px;
     border-radius: 4px;
 }
-form .dalux-subscription-widget .dalux-subscription-form input {
+form .tbeer-subscription-widget .tbeer-subscription-form input {
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
     width: 100%;
@@ -302,14 +306,14 @@ form .dalux-subscription-widget .dalux-subscription-form input {
     outline: 0;
     margin-bottom: 13px;
 }
-.dalux-comments:last-child{
+.tbeer-comments:last-child{
     margin-bottom: 25px
 }
-.dalux-featured-news-section img {
+.tbeer-featured-news-section img {
     width: 100%;
 }
 
-.dalux-links-widget ul li a {
+.tbeer-links-widget ul li a {
   font-family: 'Raleway', sans-serif;
   font-size: 13px !important;
   color: #939393;
@@ -321,9 +325,9 @@ form .dalux-subscription-widget .dalux-subscription-form input {
   -o-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.dalux-links-widget ul li a:hover {
+.tbeer-links-widget ul li a:hover {
   color: #fe6f19;
 }
- .dalux-numbered-news-post-wrapper {
+ .tbeer-numbered-news-post-wrapper {
     margin-bottom: 55px;
 }

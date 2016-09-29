@@ -553,7 +553,7 @@ if ( ! class_exists( 'Dalux_Recent_Posts_Widget' ) ) :
 
                 $header_args=array(
                 'post_type'=>'post',
-                'posts_per_page'=>4,
+                'posts_per_page'=>5,
                 'orderby' => 'date',
                 'order'   => 'DESC',
                 'cat' => $post_category,
@@ -562,7 +562,7 @@ if ( ! class_exists( 'Dalux_Recent_Posts_Widget' ) ) :
             else{
             $header_args=array(
                 'post_type'=>'post',
-                'posts_per_page'=>4,
+                'posts_per_page'=>5,
                 'orderby' => 'date',
                 'order'   => 'DESC',
                 'meta_query' => array(
@@ -588,8 +588,10 @@ if ( ! class_exists( 'Dalux_Recent_Posts_Widget' ) ) :
                                             $thumbnail = get_post_thumbnail_id();
                                             $img_url = wp_get_attachment_image_src( $thumbnail,'full');
                                             $alt = get_post_meta($thumbnail, '_wp_attachment_image_alt', true);
-                                            if($i==1 || $i==2){
-                                              $w=449;$h=618;
+                                            if($i==1){
+                                              $w=1169;$h=440;
+                                            }elseif($i==2 || $i==3){
+                                              $w=390;$h=440;
                                             }
                                             else{
                                               $w=449;$h=300;
@@ -600,26 +602,26 @@ if ( ! class_exists( 'Dalux_Recent_Posts_Widget' ) ) :
                                                 $url=get_template_directory_uri().'/assets/images/no-image.png';
                                                 $alt="No Image";
                                                 $img_url[0]=$url;
-                                            }
-                                        if($i!=4)
-                                            echo '<div class="dalux-featured-news-column">';?>
-                                                <div class="dalux-featured-news <?php if($i==3 || $i==4) echo 'dalux-half-height';?>">
-                                                    <div class="dalux-featured-img">
+                                            } ?>
+                                                <div class="tbeer-featured-news <?php if($i==4 || $i==5) echo ' tbeer-half-height'; if($i==1) echo 'tbeer-full-width';?>">
+                                                    <div class="tbeer-featured-img">
                                                         <img class="hidden-xs hidden-sm" src="<?php echo esc_url($url);?>" alt="<?php echo esc_attr($alt);?>">
                                                         <img class="hidden-md" src="<?php echo esc_url($img_url[0]);?>" alt="<?php echo esc_attr($alt);?>">
                                                     </div>
-                                                    <div class="dalux-news-details">
-                                                        <span class="dalux-category-meta"> <?php if (get_the_category()) : ?><?php the_category(' / ');endif; ?></span>
-                                                        <h3 class="dalux-news-post-heading">
+                                                    <div class="tbeer-news-details">
+                                                        <span class="tbeer-category-meta"> <?php if (get_the_category()) : ?><?php the_category(' / ');endif; ?></span>
+                                                        <h3 class="tbeer-news-post-heading">
                                                             <a href="<?php the_permalink();?>"><?php the_title();?></a>
                                                         </h3>
-                                                        <div class="dalux-news-post-meta">
-                                                            <span class="dalux-news-post-date"><?php echo date("m.d.y");  ?></span>
-                                                            <div class="dalux-news-post-author"><?php the_author_posts_link(); ?></div>
-                                                        </div>
+                                                        <?php  if($i<4){ ?>
+                                                            <div class="tbeer-news-post-meta">
+                                                                <span class="tbeer-news-post-date"><?php _e('by','dalux');?>
+                                                                <span class="tbeer-news-post-author"><?php the_author_posts_link(); ?></span></span>
+                                                            </div>
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
-                                        <?php if($i!=3) echo '</div>';
+                                        <?php
                                             $i++;
                                         endwhile;
                         echo '</div>
