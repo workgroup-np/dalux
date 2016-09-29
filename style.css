@@ -1,0 +1,329 @@
+/*
+Theme Name: Dalux
+Description: Dalux is a Premium Wordpress Theme with a unique design and fully CMS features. No matter if you use it as a photographer, travel / web design agency, nonprofit / environmental organization or even as a music / video producer. You can easily turn it into your personal website.
+Author:
+Author URI:
+Version: 1.0
+Tags:
+Theme URI:
+License:
+License URI:
+Text Domain: Dalux
+*/
+/*Custom css by rafin*/
+.cap-btn a {
+    color: #fff;
+}
+ul.children {
+    padding-left: 65px;
+}
+#reply-title{
+  display: none;
+}
+.reply-box a {
+    color: #000;
+}
+#comment-submit{
+  display: none;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background-color: #fff;
+}
+.article-main .pagination-holder .right-pagination a:after {
+    left: auto;
+    right: 5px;
+    content: "\e907";
+}
+.article-main .pagination-holder .right-pagination a:before {
+    left: auto;
+    right: 0;
+}
+.article-main .pagination-holder .right-pagination a {
+    padding-left: 0;
+    padding-right: 50px;
+}
+
+.navbar-fixed-top {
+    top: inherit;
+}
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+.dalux-latest-article .dalux-latest-article-details a.dalux-category-meta, .dalux-category-meta a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #fe6f19;
+    line-height: 1;
+}
+/*new robto css*/
+.dalux-news-details span.dalux-category-meta a{
+    color:#fff;
+}
+.dalux-news-details span.dalux-category-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #fffefe;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 20px;
+  background-color: #fe6f19;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+.dalux-numbered-news-post-wrapper{
+    float:right;
+}
+footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container {
+  display: block;
+  overflow: hidden;
+}
+footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+}footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li ul {
+  margin-left: 20px;
+}
+footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  color: #939393;
+  line-height: 1;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li a:hover {
+  color: #fe6f19;
+}
+footer .dalux-footer-top .dalux-footer-widgets-area .dalux-footer-widget .menu-main-menu-container ul li:last-child {
+  margin-bottom: 0;
+}
+.dalux-post-title-metas span.dalux-category-meta {
+    padding: 10px 15px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+}
+span.dalux-category-meta {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #fffefe;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  background-color: #fe6f19;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+span.dalux-category-meta a{
+    color:#fff;
+}
+.dalux-post-title-metas div.dalux-news-post-excerpt p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #8e8e8e;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+span.dalux-category-meta .dalux-comments-counter a{
+    color:#a8a8a8;
+}
+.dalux-next-prev-post-pagination .dalux-next-post .dalux-other-post-title-wrapper a h2,
+.dalux-next-prev-post-pagination .dalux-prev-post .dalux-other-post-title-wrapper a h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #232323;
+    font-weight: 400;
+    line-height: 26px;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -ms-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+.dalux-next-prev-post-pagination .dalux-prev-post .dalux-other-post-title-wrapper a h2:hover,.dalux-next-prev-post-pagination .dalux-next-post .dalux-other-post-title-wrapper h2 a:hover {
+    color: #fe6f19;
+}
+.dalux-comments .dalux-comment-details div.dalux-comment-reply {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #232323;
+    font-weight: 400;
+    margin-top: 14px;
+    line-height: 1;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -ms-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+form .dalux-subscription-widget .dalux-subscription-form button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    background-color: #fe6f19;
+    border: 0;
+    outline: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+form .dalux-subscription-widget .dalux-subscription-form input {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #8f8f8f;
+    padding: 0 20px 0 30px;
+    background-color: #ebebeb;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 13px;
+}
+.dalux-comments:last-child{
+    margin-bottom: 25px
+}
+.dalux-featured-news-section img {
+    width: 100%;
+}
+
+.dalux-links-widget ul li a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px !important;
+  color: #939393;
+  line-height: 1;
+  padding-bottom: 25px;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.dalux-links-widget ul li a:hover {
+  color: #fe6f19;
+}
+ .dalux-numbered-news-post-wrapper {
+    margin-bottom: 55px;
+}
