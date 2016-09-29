@@ -53,7 +53,7 @@ if($_POST['action_type'] == 'loadmore_cat' ){
           $url=get_template_directory_uri().'/assets/images/no-image.png';
           $text='No Image';
         }
-        $html=' <div class="tbeer-latest-article"><div class="tbeer-image-wrapper"><img src="'.esc_url($url).'" alt="'.esc_attr($text).'"></div><div class="tbeer-latest-article-details">'.trim( $output, $separator ).'<h3 class="tbeer-news-post-heading"><a href="'.get_the_permalink().'">'.get_the_title().'</a></h3><p class="tbeer-news-post-excerpt">'.robto_the_excerpt_max_charlength(150).'</p><div class="tbeer-news-post-meta"><span class="tbeer-news-post-date">'.date("m.d.y").'</span><div class="tbeer-news-post-author">'.get_the_author_posts_link().'</div></div></div></div>';
+        $html=' <div class="tbeer-latest-article"><div class="tbeer-image-wrapper"><img src="'.esc_url($url).'" alt="'.esc_attr($text).'"></div><div class="tbeer-latest-article-details">'.trim( $output, $separator ).'<h3 class="tbeer-news-post-heading"><a href="'.get_the_permalink().'">'.get_the_title().'</a></h3><p class="tbeer-news-post-excerpt">'.dalux_the_excerpt_max_charlength(150).'</p><div class="tbeer-news-post-meta"><span class="tbeer-news-post-date">'.date("m.d.y").'</span><div class="tbeer-news-post-author">'.get_the_author_posts_link().'</div></div></div></div>';
 
     endwhile;
     echo $html;

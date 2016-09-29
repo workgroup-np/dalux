@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} ?>
 
 <?php if (comments_open()) : ?>
 <div id="comments" class="clearfix">
-    <div class="dalux-comments-section">
+    <div class="tbeer-comments-section">
     <?php if ( post_password_required() ) : ?>
         <p class="nopassword">
             <?php _e( 'This post is password protected. Enter the password to view any comments.', 'dalux' ); ?>
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} ?>
     <?php return; endif;
     $ncom = get_comments_number();
     if ($ncom>0) :
-        echo '<h3 class="dalux-wrapper-title">';
+        echo '<h3 class="tbeer-wrapper-title">';
         if ($ncom==1) _e('1 ', 'dalux'); else echo sprintf (__('%s ','dalux'), $ncom);
         _e('Comments','dalux');
         echo '</h3>';
@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} ?>
                 <?php paginate_comments_links(); ?>
             </nav>
         <?php endif; ?>
-        <div class="dalux-comments-details-wrapper dalux-single-wrapper">
+        <div class="tbeer-comments-details-wrapper tbeer-single-wrapper">
             <ul class="comment-reply">
                 <?php
                 // Comment List
@@ -42,8 +42,8 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} ?>
         <?php endif;
      endif; ?>
 </div>
-    <div class="dalux-comments-submit-section">
-    <h3 class="dalux-wrapper-title"><?php _e('Leave a reply','dalux'); ?></h3>
+    <div class="tbeer-comments-submit-section">
+    <h3 class="tbeer-wrapper-title"><?php _e('Leave a reply','dalux'); ?></h3>
         <?php global $req,$commenter;
         // Comment Form
         $aria_req = ( $req ? " aria-required='true'" : '' );
@@ -58,10 +58,10 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} ?>
             'cancel_reply_link'=>'Cancel',
             'id_submit' => 'comment-submit',
             'comment_field' =>  '<div class="form-group"><textarea id="comment" name="comment" cols="30" rows="10" placeholder="Comment*"></textarea></div>',
-            'comment_notes_after' => '<button type="submit" id="submit" class="dalux-submit-btn">Post Comment</button>',
+            'comment_notes_after' => '<button type="submit" id="submit" class="tbeer-submit-btn">Post Comment</button>',
             'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','dalux'), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink($post->ID) ) ) ) . '</p>',
         );
-        echo '<div class="dalux-comments-form dalux-single-wrapper">';
+        echo '<div class="tbeer-comments-form tbeer-single-wrapper">';
             comment_form($args);
         echo '</div>';
         //echo str_replace('class="comment-form"','class="reply-form"',ob_get_clean());

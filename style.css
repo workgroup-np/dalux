@@ -241,6 +241,10 @@ footer .tbeer-footer-top .tbeer-footer-widgets-area .tbeer-footer-widget .menu-m
     font-weight: 400;
     margin-bottom: 35px;
 }
+.tbeer-news-post-excerpt{
+  margin-top:30px;
+}
+
 span.tbeer-category-meta .tbeer-comments-counter a{
     color:#a8a8a8;
 }

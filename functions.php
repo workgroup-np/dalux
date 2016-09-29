@@ -71,7 +71,7 @@ function dalux_widgets_setup() {
             'name' => __("Post Sidebar Widget Here", 'dalux'),
             'id' => "dalux-post-sidebar",
             'description' => __('Widgets placed here will display in the post detail page', 'dalux'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s dalux-sidebar-widget">',
+            'before_widget' => '<div id="%1$s" class="widget %2$s tbeer-sidebar-widget">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="dalux-sidebar-widget-title">',
             'after_title'   => '</h3>'
@@ -81,7 +81,7 @@ function dalux_widgets_setup() {
             'name' => __("Ad Widget Here", 'dalux'),
             'id' => "dalux-widgets-sidebar",
             'description' => __('Widgets placed here will display in the right sidebar', 'dalux'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s dalux-addvertisment-space dalux-sidebar-widget">',
+            'before_widget' => '<div id="%1$s" class="widget %2$s tbeer-addvertisment-space tbeer-sidebar-widget">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="dalux-sidebar-widget-title">',
             'after_title'   => '</h3>'
@@ -91,9 +91,9 @@ function dalux_widgets_setup() {
             'name' => __("Trending Widget Here", 'dalux'),
             'id' => "dalux-trending-sidebar",
             'description' => __('Sidebar for trending posts', 'dalux'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s dalux-sidebar-widget dalux-trending-news-widget">',
+            'before_widget' => '<div id="%1$s" class="widget %2$s tbeer-sidebar-widget dalux-trending-news-widget">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="dalux-sidebar-widget-title">',
+            'before_title'  => '<h3 class="tbeer-sidebar-widget-title">',
             'after_title'   => '</h3>'
         ));
          register_sidebar(array(
@@ -109,9 +109,9 @@ function dalux_widgets_setup() {
             'name' => "Footer Block Widgets Here",
             'id' => "dalux-widgets-footer-block-1",
             'description' => __('Widgets placed here will display in the footer block', 'dalux'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s dalux-footer-widget dalux-links-widget">',
+            'before_widget' => '<div id="%1$s" class="widget %2$s tbeer-footer-widget tbeer-links-widget">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="dalux-footer-widget-title">',
+            'before_title'  => '<h3 class="tbeer-footer-widget-title">',
             'after_title'   => '</h3>'
         ));
 
@@ -394,23 +394,22 @@ function dalux_register_required_plugins() {
 function dalux_comment($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     extract($args, EXTR_SKIP);
-
 ?>
-    <li <?php comment_class( empty( $args['has_children'] ) ? 'dalux-comments' : 'parent dalux-comments' ) ?> id="comment-<?php comment_ID() ?>">
-        <div class="dalux-user-img">
-            <img class="img-circle media-object" src="<?php echo get_avatar_url(get_avatar( $comment, $args['avatar_size'] )); ?>" alt="Generic placeholder image">
+    <li <?php comment_class( empty( $args['has_children'] ) ? 'tbeer-comments tbeer-replied-comment' : 'tbeer-comments' ) ?> id="comment-<?php comment_ID() ?>">
+        <div class="tbeer-user-img">
+            <img class="img-circle media-object" src="<?php echo get_avatar_url(get_avatar( $comment, $args['avatar_size'] )); ?>" alt="Author avatar">
         </div>
-        <div class="dalux-comment-details">
+        <div class="tbeer-comment-details">
         <?php if($depth>1): echo '<div class="media">'; else : echo'<div class="media-body">'; endif;?>
             <h3><a href="#!"><?php echo get_comment_author_link(); ?></a>
-                <span class="dalux-comment-time"><?php
+                <span class="tbeer-comment-time"><?php
                             /* translators: 1: date, 2: time */
-                            printf( __('%1$s at %2$s','dalux'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)','dalux' ), '  ', '' );
+                            echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></a><?php edit_comment_link( __( '(Edit)','dalux' ), '  ', '' );
                         ?>
                 </span>
             </h3>
-            <p><?php comment_text(); ?></p>
-            <div class="reply-box dalux-comment-reply"><?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply','depth' => $depth, 'max_depth' => $args['max_depth']))) ?></div>
+            <p><?php echo get_comment_text(); ?></p>
+            <div class="reply-box tbeer-comment-reply"><?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply','depth' => $depth, 'max_depth' => $args['max_depth']))) ?></div>
             <div class="comment-block">
             <?php if ( $comment->comment_approved == '0' ) : ?>
                 <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.','dalux' ); ?></em>
@@ -419,7 +418,6 @@ function dalux_comment($comment, $args, $depth) {
             </div>
         </div>
     </li>
-
 <?php
 }
 
@@ -477,11 +475,6 @@ function dalux_post_meta() {
         'id'   => '_dalux_featured',
         'type' => 'checkbox',
         'desc' => 'Check if post is featured post.',
-    ) );$cmb->add_field( array(
-        'name' => 'Must Post',
-        'id'   => '_dalux_must',
-        'type' => 'checkbox',
-        'desc' => 'Check if post is must read post.',
     ) );
 
 }
@@ -697,10 +690,9 @@ if ( ! class_exists( 'Dalux_Recent_Posts_Widget' ) ) :
 endif;
 // excerpt
 //excerpt max charlenght
-function robto_the_excerpt_max_charlength($charlength) {
+function dalux_the_excerpt_max_charlength($charlength) {
     $excerpt = get_the_excerpt();
     $charlength++;
-
     if ( mb_strlen( $excerpt ) > $charlength ) {
         $subex = mb_substr( $excerpt, 0, $charlength - 7 );
         $exwords = explode( ' ', $subex );

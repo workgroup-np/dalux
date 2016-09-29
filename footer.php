@@ -3,20 +3,20 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} $pageid=get_the_ID
     <!-- FOOTER -->
         <footer>
             <!-- Footer Top -->
-            <div class="dalux-footer-top">
+            <div class="tbeer-footer-top">
                 <div class="container">
                     <div class="row">
                         <!-- Fixed Widget -->
-                        <div class="dalux-fixed-widget col-md-7 col-sm-6 col-xs-12">
+                        <div class="tbeer-fixed-widget col-md-7 col-sm-6 col-xs-12">
                             <!-- About Us widget -->
                             
-                            <div class="dalux-about-us-widget">
+                            <div class="tbeer-about-us-widget">
                                 <?php if($dalux_options['footer_logo']['url']):?>
-                                  <div class="dalux-logo-wrapper">
+                                  <div class="tbeer-logo-wrapper">
                                         <a href="<?php echo site_url('/');?>"><img src="<?php echo esc_url($dalux_options['footer_logo']['url']);?>" alt="<?php echo get_bloginfo( 'name' ); ?>"></a>
                                   </div>
                                 <?php endif;?>         
-                                <div class="dalux-about-details-wrapper">
+                                <div class="tbeer-about-details-wrapper">
                                      <p><?php echo wp_kses_post($dalux_options['footer_text']);?></p>
                                 </div>
                                 <?php if(isset($dalux_options['footer_icons']) && $dalux_options['footer_icons']==1):
@@ -24,16 +24,16 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} $pageid=get_the_ID
                                 $twitter=$dalux_options['social_twitter'];
                                 $google=$dalux_options['social_googlep'];
                                 $youtube=$dalux_options['social_youtube'];?>
-                                <div class="dalux-social-links">
+                                <div class="tbeer-social-links">
                                     <ul>
                                       <?php if($facebook):?>
-                                          <li><a href="<?php echo esc_url($facebook);?>" target="_blank" class="dalux-facebook"><i class="fa fa-facebook"></i></a></li>
+                                          <li><a href="<?php echo esc_url($facebook);?>" target="_blank" class="tbeer-facebook"><i class="fa fa-facebook"></i></a></li>
                                       <?php endif; if($twitter):?>
-                                          <li><a href="<?php echo esc_url($twitter);?>" target="_blank" class="dalux-twitter"><i class="fa fa-twitter"></i></a></li>
+                                          <li><a href="<?php echo esc_url($twitter);?>" target="_blank" class="tbeer-twitter"><i class="fa fa-twitter"></i></a></li>
                                       <?php endif; if($google):?>
-                                          <li><a href="<?php echo esc_url($google);?>" target="_blank" class="dalux-google-plus"><i class="fa fa-google-plus"></i></a></li>
+                                          <li><a href="<?php echo esc_url($google);?>" target="_blank" class="tbeer-google-plus"><i class="fa fa-google-plus"></i></a></li>
                                       <?php endif; if($youtube):?>
-                                          <li><a href="<?php echo esc_url($youtube);?>" target="_blank" class="dalux-youtube"><i class="fa fa-youtube-play"></i></a></li>
+                                          <li><a href="<?php echo esc_url($youtube);?>" target="_blank" class="tbeer-youtube"><i class="fa fa-youtube-play"></i></a></li>
                                       <?php endif;?>
                                     </ul>
                                 </div>
@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} $pageid=get_the_ID
                         <!-- End -->
 
                         <!-- Footer Widget -->
-                        <div class="dalux-footer-widgets-area col-md-5 col-sm-6 col-xs-12">
+                        <div class="tbeer-footer-widgets-area col-md-5 col-sm-6 col-xs-12">
                              <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('dalux-widgets-footer-block-1')) : ?>
                                 <?php get_sidebar('dalux-widgets-footer-block-1');?>
                             <?php endif; ?> 
@@ -56,15 +56,15 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} $pageid=get_the_ID
             <!-- Footer Top End -->
 
             <!-- Footer Bottom -->
-            <div class="dalux-footer-bottom">
+            <div class="tbeer-footer-bottom">
                 <div class="container">
                     <div class="row">
                      <?php if($dalux_options['footer_copyright']):?>
-                        <div class="dalux-copyright-info">
+                        <div class="tbeer-copyright-info">
                             <p><?php echo wp_kses_post($dalux_options['footer_copyright']);?></p>
                         </div>
                     <?php endif;?>
-                        <div class="dalux-footer-menu">
+                        <div class="tbeer-footer-menu">
                             <?php
                                 wp_nav_menu( array(
                                 'theme_location'    => 'secondary',

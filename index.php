@@ -39,7 +39,7 @@ endif;
                                                     <h3 class="tbeer-news-post-heading">
                                                         <a href="<?php the_permalink();?>"><?php the_title();?></a>
                                                     </h3>
-                                                    <p class="tbeer-news-post-excerpt"><?php echo robto_the_excerpt_max_charlength(150);?></p>
+                                                    <p class="tbeer-news-post-excerpt"><?php echo dalux_the_excerpt_max_charlength(150);?></p>
                                                     <div class="tbeer-news-post-meta">
                                                         <span class="tbeer-news-post-date"><?php echo date("m.d.y");  ?></span>
                                                         <div class="tbeer-news-post-author"><?php the_author_posts_link(); ?></div>
@@ -86,106 +86,5 @@ endif;
             </div>
         </section>
         <!-- LATEST ARTICLE SECTION END -->
-         <!-- MUST READ SECTION -->
-         <?php if(isset($tbeer_options['must_read'])&& $tbeer_options['must_read']==1):?>
-            <section class="tbeer-must-read-news-section tbeer-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="tbeer-section-title-wrapper">
-                            <h3 class="tbeer-section-btn-style-title"><?php _e('Must Read','robto');?></h3>
-                        </div>
-                        <div class="tbeer-main-content">
-                             <?php
-                             $header_args=array(
-                                'post_type'=>'post',
-                                'posts_per_page'=>esc_attr($tbeer_options['right_must_read']),
-                                'orderby' => 'date',
-                                'order'   => 'DESC',
-                                'meta_query' => array(
-                                    array(
-                                        'key'     => '_tbeer_must',
-                                        'value'   => 'on',
-                                        'compare' => '=',
-                                    ),
-                                ),
-                            );
-                            $header_query= new WP_Query($header_args);
-                                $header_query= new WP_Query($header_args);
-                                if($header_query->have_posts()):$i=1;
-                                    echo ' <div class="tbeer-numbered-news-post-wrapper col-md-5 col-sm-6 col-xs-12">';
-                                    while($header_query->have_posts()):
-                                    $header_query->the_post(); ?>
-                                        <div class="tbeer-numbered-news-post">
-                                            <span class="tbeer-post-number"><?php echo $i;?></span>
-                                            <h3 class="tbeer-news-post-heading">
-                                                <a href="<?php the_permalink();?>"><?php the_title();?></a>
-                                            </h3>
-                                        </div>
-                                     <?php $i++;
-                                    endwhile;
-                                echo '</div>';
-                            endif;
-                            wp_reset_postdata();
-                             $header_args=array(
-                                'post_type'=>'post',
-                                'posts_per_page'=>esc_attr($tbeer_options['left_must_read']),
-                                'orderby' => 'date',
-                                'order'   => 'DESC',
-                                'offset' =>esc_attr($tbeer_options['right_must_read']),
-                                'meta_query' => array(
-                                    array(
-                                        'key'     => '_tbeer_must',
-                                        'value'   => 'on',
-                                        'compare' => '=',
-                                    ),
-                                ),
-                            );
-                            $header_query= new WP_Query($header_args);
-                                $header_query= new WP_Query($header_args);
-                                if($header_query->have_posts()):$i=1;
-                                    echo '<div class="tbeer-must-read-news-wrapper col-md-7 col-sm-6 col-xs-12">';
-                                    while($header_query->have_posts()):
-                                    $header_query->the_post(); ?>
-                                        <div class="tbeer-must-read-news">
-                                            <!-- Image -->
-                                            <?php
-                                                $thumbnail = get_post_thumbnail_id($post->ID);
-                                                $img_url = wp_get_attachment_image_src( $thumbnail,'full');
-                                                $alt = get_post_meta($thumbnail, '_wp_attachment_image_alt', true);
-                                            if($img_url):
-                                                $n_img = aq_resize( $img_url[0], $width =220, $height = 220, $crop = true, $single = true, $upscale = true ); ?>
-                                                <div class="tbeer-image-wrapper">
-                                                    <img class="hidden-xs hidden-sm" src="<?php echo esc_url($url);?>" alt="<?php echo esc_attr($alt);?>">
-                                                    <img class="hidden-md" src="<?php echo esc_url($img_url[0]);?>" alt="<?php echo esc_attr($alt);?>">                                                  
-                                                </div>
-                                            <?php else:
-                                            $img_url=get_template_directory_uri().'/assets/images/no-image.png';
-                                            $n_img = aq_resize( $img_url[0], $width =220, $height = 220, $crop = true, $single = true, $upscale = true );?>
-                                            <div class="tbeer-image-wrapper">
-                                                    <img class="hidden-xs hidden-sm" src="<?php echo esc_url($url);?>" alt="<?php echo esc_attr($alt);?>">
-                                                    <img class="hidden-md" src="<?php echo esc_url($img_url);?>" alt="<?php echo esc_attr($alt);?>">
-                                            </div>
-                                            <?php endif;?>
-                                            <div class="tbeer-must-read-news-details">
-                                                <span class="tbeer-category-meta"> <?php if (get_the_category()) : ?><?php the_category(' / ');endif; ?></span>
-                                                <h3 class="tbeer-news-post-heading">
-                                                    <a href="<?php the_permalink();?>"><?php the_title();?></a>
-                                                </h3>
-                                                <div class="tbeer-news-post-meta">
-                                                    <span class="tbeer-news-post-date"><?php echo date("m.d.y");  ?></span>
-                                                    <div class="tbeer-news-post-author"><?php the_author_posts_link(); ?></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                     <?php $i++;
-                                    endwhile;
-                                echo '</div>';
-                            endif;
-                            wp_reset_postdata();                          
-                            ?>                      
-                        </div>
-                    </div>
-                </div>
-            </section>
-        <?php endif;?>
+
 <?php get_footer(); ?>
